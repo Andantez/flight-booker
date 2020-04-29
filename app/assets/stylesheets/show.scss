@@ -1,0 +1,32 @@
+@import 'fonts';
+@import 'colors';
+
+.confirmation-text {
+  font-family: $text-font;
+  font-size: 1.5rem;
+  color: $black;
+  letter-spacing: 2px;
+  text-shadow: 1px 2px $white;
+}
+
+.home {
+  text-decoration: none;
+  font-family: $text-font;
+  font-size: 2rem;
+  color: $light-red;
+  text-shadow: 1px 1px black;
+  &:hover {
+    text-shadow: 1px 2px black;
+  }
+}
+
+.notice {
+  color: $white;
+  font-size: 1.2rem;
+}
+
+.danger {
+  color: $red;
+  font-size: 1rem;
+}
+

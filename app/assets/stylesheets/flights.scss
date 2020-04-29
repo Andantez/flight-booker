@@ -1,0 +1,190 @@
+// Place all the styles related to the Flights controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+@import 'fonts';
+@import 'colors';
+
+body {
+  background-color: $white;
+  // background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.1)), url("photo-1561692521-c4812ff7e89b");
+  
+}
+
+.index-container {
+  display: flex;
+  margin: 0px auto;
+  width: 50%;
+  justify-content: space-evenly;
+}
+
+.header {
+  color: $red;
+  font-family: $title-font;
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 30px 0px;
+  font-weight: bold;
+  letter-spacing: 5px;
+  text-shadow: 1px 2px $black;
+}
+
+.list {
+  list-style: none;
+  padding-left: 40px;
+  padding-right:40px ;
+  
+}
+.form-list {
+  padding-top: 40px;
+}
+.list-item {
+  margin-bottom: 20px;
+}
+
+.form-container {
+  border-radius: 1rem 3rem 1rem 4rem / 1rem 3rem 1rem 4rem;
+  background-color: $red;
+  border: 1px solid $black;
+  max-height: 600px;
+
+}
+.form-label {
+  color: $white;
+  font-family: $text-font;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 2rem;
+}
+.form-input {
+  font-size: 1.2rem;
+  width: 300px;
+  border: 1px solid $black;
+  border-radius: 4px;
+  padding: 5px;
+  color: $black;
+  font-weight: bold;
+  background-color: $white;
+  font-family: $title-font;
+  letter-spacing: 1px;
+}
+
+#departing_flight_id {
+  font-size: 1.2rem;
+  width: 300px;
+  border: 1px solid $black;
+  border-radius: 4px;
+  padding: 5px;
+  color: $black;
+  font-weight: bold;
+  background-color: $white;
+  font-family: $title-font;
+  letter-spacing: 1px;
+}
+
+#arriving_flight_id {
+  font-size: 1.2rem;
+  width: 300px;
+  border: 1px solid $black;
+  border-radius: 4px;
+  padding: 5px;
+  color: $black;
+  font-weight: bold;
+  background-color: $white;
+  font-family: $title-font;
+  letter-spacing: 1px;
+}
+#passengers {
+  font-size: 1.2rem;
+  width: 300px;
+  border: 1px solid $black;
+  border-radius: 4px;
+  padding: 5px;
+  color: $black;
+  font-weight: bold;
+  background-color: $white;
+  font-family: $title-font;
+  letter-spacing: 1px;
+}
+
+.submit {
+  // width: 100px;
+  font-size: 1.2rem;
+  text-align: center;
+  border: 1px solid $black;
+  border-radius: 4px;
+  padding: 5px 20px;
+  color: $black;
+  font-weight: bold;
+  background-color: $white;
+  font-family: $title-font;
+  letter-spacing: 1px;
+}
+.submit-btn {
+  text-align: center;
+}
+
+.result-item {
+  font-weight: bold;
+  color: $black;
+  font-family: $title-font;
+  letter-spacing: 5px;
+  font-size: 1.1rem;
+  padding: 3px;
+  padding-bottom: 10px;
+  // text-shadow: 2px 1;
+}
+
+.results-container {
+  
+    // border-radius: 1rem 3rem 1rem 4rem / 1rem 3rem 1rem 4rem;
+    // background-color: $grey;
+    // border: 5px solid $red;
+ 
+}
+
+.list-item-container {
+  margin-bottom: 20px;
+  border-bottom: 5px solid $red;
+}
+
+.upcomming {
+  font-family: $title-font;
+  color: $red;
+  font-size: 1.4rem;
+  text-shadow: 1px 1px $black;
+  // border-bottom: 5px solid $red;
+  padding-bottom: 10px;
+}
+
+.pagination {
+  font-size: 1.2rem;
+  font-family: $text-font;
+  color: $grey;
+  padding-bottom: 15px;
+  a {
+    color: black;
+    font-weight: bold;
+  }
+}
+
+.passenger-select {
+  width: 50px !important;
+  font-size: 1rem !important;
+}
+
+.book-btn {
+  font-size: 1.2rem;
+  border: 1px solid $black;
+  border-radius: 4px;
+  padding: 5px 20px;
+  color: $white;
+  font-weight: bold;
+  background-color: $red;
+  font-family: $title-font;
+  letter-spacing: 1px;
+  &:hover {
+    color: $black;
+    background-color: $white;
+  }
+
+}

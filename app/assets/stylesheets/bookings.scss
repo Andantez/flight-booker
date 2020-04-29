@@ -1,0 +1,97 @@
+// Place all the styles related to the Bookings controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+@import 'fonts';
+@import 'colors';
+
+.booking-main-cont {
+  display: flex;
+  align-items: center;
+  margin: 0px auto;
+  width: 50%;
+}
+
+.booking-cont {
+  text-align: center;
+}
+
+.booking-label {
+  color: $white;
+  font-family: $text-font;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 1.5rem;
+  text-shadow: 1px 2px black;
+}
+
+.test {
+  border-radius: 5px;
+  background-color: $red;
+  border: 1px solid $black;
+  margin: 20px;
+  padding: 5px;
+}
+
+.booking-input {
+  font-size: 1.2rem;
+  width: 200px;
+  border: 1px solid $black;
+  border-radius: 4px;
+  padding: 5px;
+  color: $black;
+  font-weight: bold;
+  background-color: $white;
+  font-family: $title-font;
+  letter-spacing: 1px;
+}
+
+.booking-field {
+  padding: 10px;
+}
+
+.info-cont {
+  background-color:  $red;
+  border-radius: 5px;
+  border: 1px solid $black;
+}
+
+.confirm-booking {
+  font-size: 1.2rem;
+  text-align: center;
+  border: 1px solid $black;
+  border-radius: 4px;
+  padding: 5px 20px;
+  color: $white;
+  font-weight: bold;
+  background-color: $red;
+  font-family: $title-font;
+  letter-spacing: 1px;
+  &:hover{
+    color: $black;
+    background-color: $white;
+  }
+}
+
+.flight-header {
+  color: $red;
+  font-size: 3rem;
+  text-align: center;
+  text-shadow: 1px 1px black;
+}
+
+.confirmation-info {
+  font-weight: bold;
+  color: $white;
+  font-family: $title-font;
+  letter-spacing: 5px;
+  font-size: 1.1rem;
+  padding: 3px;
+  padding-bottom: 10px;
+  text-shadow: 1px 2px $black;
+}
+
+.para {
+  font-family: $title-font;
+  font-size: 1.2rem;
+  text-shadow: 1px 1px $grey;
+}

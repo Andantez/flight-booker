@@ -1,0 +1,37 @@
+<h3 class="flight-header">Final confirmation</h3>
+<div class="booking-main-cont">
+  <div class="info-cont">
+    <ul class="list">
+      <li class="confirmation-info">Departing from: <%= @flight.departing_flight.code %></li>
+      <li class="confirmation-info">Arriving at: <%= @flight.arriving_flight.code %></li>
+      <li class="confirmation-info">Date: <%= @flight.flight_date %></li>
+      <li class="confirmation-info">Time of the flight: <%= @flight.flight_time %></li>
+      <li class="confirmation-info">Duration: <%= @flight.duration %> hrs.</li>
+      <li class="confirmation-info">Passengers: <%= @passengers.count %></li>
+    </ul>
+  </div>
+  <div class="booking-cont">
+    
+            <p class="para">Please provide a name and email</p>
+    <%= form_with(model: @booking, local: true) do |f| %>
+      <%= hidden_field_tag :flight_id, @flight.id %>
+      <%= f.fields_for :passengers, @passengers do |passenger| %>
+    <div class="test">
+      
+          <div class="booking-field">
+            <%= passenger.label :name, class:"booking-label" %>
+            <%= passenger.text_field :name, class:"booking-input" %>
+       
+       
+          </div>
+          <div class="booking-field">
+          <%= passenger.label :email, class:"booking-label" %>
+          <%= passenger.text_field :email, class: "booking-input" %>
+      
+          </div>
+    </div>
+      <% end %>
+      <%= f.submit "Confirm", class:"confirm-booking" %>
+    <% end %>
+  </div>
+</div>

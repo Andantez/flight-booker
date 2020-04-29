@@ -18,8 +18,16 @@ airport_codes.each do |code|
 end
 
 Flight.destroy_all
-5.times do
-  random_id = (1..14).to_a
-  Flight.create!(departing_id: random_id.sample, arriving_id: random_id.sample,
-                 duration: 3.15, start_of_the_flight: '2020-12-29 18:45')
+1500.times do |i|
+  airport_ids = Airport.all.ids.sample(2)
+  puts "Creating flight number #{i}"
+  random_datetime = Faker::Time.between(from: DateTime.now + 1.day,
+                                        to: 1.years.from_now,
+                                        format: :default)
+  random_duration = (2.0..4.0).step(0.01).map { |x| x.round(2) }
+  Flight.create!(departing_flight_id: airport_ids[0],
+                           arriving_flight_id: airport_ids[1]) do |s|
+    s.duration = random_duration.sample
+    s.datetime = random_datetime
+  end
 end
