@@ -11,23 +11,18 @@
     </ul>
   </div>
   <div class="booking-cont">
-    
             <p class="para">Please provide a name and email</p>
     <%= form_with(model: @booking, local: true) do |f| %>
       <%= hidden_field_tag :flight_id, @flight.id %>
       <%= f.fields_for :passengers, @passengers do |passenger| %>
     <div class="test">
-      
           <div class="booking-field">
             <%= passenger.label :name, class:"booking-label" %>
             <%= passenger.text_field :name, class:"booking-input" %>
-       
-       
           </div>
           <div class="booking-field">
           <%= passenger.label :email, class:"booking-label" %>
           <%= passenger.text_field :email, class: "booking-input" %>
-      
           </div>
     </div>
       <% end %>

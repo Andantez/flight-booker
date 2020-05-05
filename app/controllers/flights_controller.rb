@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
+# Getting the param hash and find the flight requested by the user
 class FlightsController < ApplicationController
   def index
-    @upcomming_flights = Flight.all.upcomming_flights.paginate(page: params[:page], per_page: 3)
+    @upcomming_flights = Flight.all.upcomming_flights
+                               .paginate(page: params[:page], per_page: 3)
     @departing = params[:departing_flight_id]
     @arriving = params[:arriving_flight_id]
     if params[:datetime]
