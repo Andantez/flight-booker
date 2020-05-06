@@ -14,7 +14,7 @@
        </li>
          <li class="list-item"><%= f.label "Passengers", class: "form-label" %></li>
        <li class="list-item">
-         <%= f.select :passengers, options_for_select(1..4), class: "form-input"%>
+         <%= f.select :passengers, options_for_select(1..4,),  { include_blank: false }%>
        </li>
          <li class="list-item"><%= f.label "Departure", class: "form-label" %></li>
        <li class="list-item">
@@ -24,8 +24,6 @@
       <% end %>
    </ul>
   </div>
-    
-
 <div class="results-container">
   <ul class="list">
     <% if !@flight_result.empty? %>
@@ -43,8 +41,8 @@
            <% end %>
        <li class="result-item"><%= f.submit "Book" , class: "book-btn" %></li>
         <% end %>
-        <% else %>
-        <%= form_with(url: new_booking_path, local: true, method: "get") do |f| %>
+      <% end %>
+       <%= form_with(url: new_booking_path, local: true, method: "get", class: "form") do |f| %>
         <%= hidden_field_tag :passengers, @passengers %>
         <p class="upcomming">Upcomming flights in next 3 weeks</p>
         <%= will_paginate @upcomming_flights, class:"pagination" %>
@@ -54,16 +52,16 @@
               <li class="result-item"> Arriving at: <%= x.arriving_flight.code %></li>
               <li class="result-item">Flight date: <%= x.flight_date %></li>
               <li class="result-item">Duration: <%= x.duration %> hrs.</li>
-
               <li class="result-item"><%= f.radio_button :flight_id, x.id, required: :required%>
                 <%= f.label :booked_flight, "Select" %>
-              | Passengers <%= f.select :passengers, options_for_select(1..4,),  { include_blank: false },  class: "passenger-select" %>
-              
             </div>
            <% end %>
-       <li class="result-item"><%= f.submit "Book", class: "book-btn" %></li>
+               
+       <div class="select">
+          <li class="result-item select"><%= render "select", f: f %></li>
+          <li class="result-item"><%= f.submit "Book", class: "book-btn" %></li>
+       </div>
         <% end %>
-      <% end %>
   </ul>
 </div>
 </div>  
