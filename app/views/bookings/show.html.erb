@@ -1,12 +1,11 @@
 <h1 class="header">Confirmation</h1>
-
 <%= render 'shared/flashes' %>
 <div class="flight-confirmation">
-<% @booking.passengers.each do |passenger| %>
-  <p class="confirmation-text">Ticket is send to <%= passenger.email %>
-  <%= passenger.name %>
-  </p>
-<% end %>
-<p class="confirmation-text">Please check your email.</p>
-<%= link_to "Home", root_path, class: "home" %>
+  <% @booking.passengers.each do |passenger| %>
+    <p class="confirmation-text">Ticket is send to <%= passenger.email %>
+      <%= passenger.name %>
+    </p>
+  <% end %>
+  <p class="confirmation-text">Please check your email.</p>
+  <%= link_to "Home", root_path, class: "home" %>
 </div>

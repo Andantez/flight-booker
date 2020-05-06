@@ -8,7 +8,7 @@ class Flight < ApplicationRecord
   belongs_to :arriving_flight,  class_name: 'Airport',
                                 inverse_of: 'arriving_flights'
   validate :unique_pairs
-  scope :upcomming_flights, -> { where(datetime: Date.today..Date.today + 1.week)}
+  scope :upcomming_flights, -> { where(datetime: Date.today..Date.today + 1.week) }
 
   def flight_date
     datetime.strftime('%Y-%m-%d ')
